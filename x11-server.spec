@@ -40,7 +40,7 @@ Version:	1.20.1
 %if %{git}
 Release:	0.%{git}.1
 %else
-Release:	2
+Release:	3
 %endif
 Summary:	X11 servers
 Group:		System/X11
@@ -557,6 +557,8 @@ test $(getmajor extension) == %{extension_major}
 test $(getminor extension) == %{extension_minor}
 
 %build
+export CC=gcc
+export CXX=g++
 CONFIGURE_TOP="$PWD"
 mkdir -p .build
 pushd .build
