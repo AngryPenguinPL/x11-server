@@ -557,8 +557,6 @@ test $(getmajor extension) == %{extension_major}
 test $(getminor extension) == %{extension_minor}
 
 %build
-export CC=gcc
-export CXX=g++
 CONFIGURE_TOP="$PWD"
 mkdir -p .build
 pushd .build
@@ -572,8 +570,8 @@ CFLAGS='-DBUILDDEBUG -O0 -g3' \
 # Before removing forcing gcc, test that a system with your new
 # X packages boots to UI after a reboot.
 # (tpg) try with LTO and clang enabled
-#define _disable_lto 1
-#CC=gcc CXX=g++ \
+%define _disable_lto 1
+CC=gcc CXX=g++ \
 %endif
 
 %configure \
