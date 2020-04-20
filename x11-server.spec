@@ -576,7 +576,7 @@ Xserver source code needed to build unofficial servers, like Xvnc.
 %else
 %setup -q -n xorg-server-%{version}
 %endif
-%apply_patches
+%autopatch -p1
 autoreconf -if
 
 # check the ABI in the source against what we expect.
