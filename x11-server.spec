@@ -677,8 +677,6 @@ CFLAGS='-DBUILDDEBUG -O0 -g3' \
 	--enable-secure-rpc \
 	--disable-config-hal \
 	--with-sha1=libcrypto \
-	--with-systemd-daemon \
-	--enable-systemd-logind \
 	--enable-xwrapper \
 	--with-default-font-path="catalogue:%{_sysconfdir}/X11/fontpath.d"
 
